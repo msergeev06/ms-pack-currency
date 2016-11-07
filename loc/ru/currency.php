@@ -1,6 +1,6 @@
 <?php
 
-$arMessages = array(
+return array(
 	'RUB_NAME' => 'Российский рубль',
 	'RUB_NAMES' => 'Российских рублей',
 	'RUB_SHORT' => 'руб.',
