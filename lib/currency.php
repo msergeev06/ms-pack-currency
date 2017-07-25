@@ -147,11 +147,16 @@ class Currency
 					"<=DATE" => $date,
 					"CURRENCY_CURRENT" => $rateCur,
 					"CURRENCY_BASE" => $baseCur
-				)
+				),
+				'limit' => 1
 			));
+			if ($res && isset($res[0]))
+			{
+				$res = $res[0];
+			}
 			if ($res)
 			{
-				return floatval($res[0]["RATE"]);
+				return floatval($res["RATE"]);
 			}
 			else
 			{
@@ -198,11 +203,16 @@ class Currency
 			"select" => "RATING",
 			"filter" => array(
 				"CODE" => $fromCur
-			)
+			),
+			'limit' => 1
 		));
+		if ($res && isset($res[0]))
+		{
+			$res = $res[0];
+		}
 		if ($res)
 		{
-			$rating = $res[0]["RATING"];
+			$rating = $res["RATING"];
 		}
 		else
 		{
